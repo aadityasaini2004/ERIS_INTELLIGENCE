@@ -1,57 +1,57 @@
 # 🚀 ERIS Intelligence: Smart HR & Resource Allocation System
 
-**ERIS Intelligence** ek enterprise-grade SaaS application hai jo HR teams ko data-driven decision lene mein madad karta hai. Yeh system **GitHub API** ka use karke employees ki coding skills ko automatically track aur verify karta hai.
+**ERIS Intelligence** is an enterprise-grade SaaS application designed to help HR teams make data-driven decisions. The system leverages the **GitHub REST API** to automatically track, verify, and map employee coding skills based on their real-world contributions.
 
 ---
 
 ## 🌟 Key Features
 
-* **🎯 Smart Resource Allocation:** HR kisi bhi skill (e.g., React, Java) ko search karke company ke best-performing employees ko filter kar sakta hai.
-* **🔄 Auto-Skill Mapping:** GitHub API integration se employee ke repositories scan hote hain aur unki skills automatically database mein sync ho jati hain.
+* **🎯 Smart Resource Allocation:** HR can search for any technology (e.g., React, Java, Python) to instantly identify and rank the best-performing experts within the company.
+* **🔄 Auto-Skill Mapping:** Seamless integration with GitHub to scan employee repositories, analyze primary languages, and sync proficiency levels directly to the database.
 * **🛡️ Role-Based Access Control (RBAC):**
-    * **HR/Admin:** Pura dashboard, employee management, aur smart filters access kar sakte hain.
-    * **Employee:** Sirf apna personal work summary, assigned projects, aur skill level dekh sakte hain.
-* **🔑 Secure Authentication:** JSON Web Tokens (JWT) ka use karke stateless aur secure login system.
-* **🎨 Premium Dark UI:** Modern dashboard jisme glowing cards, real-time stats, aur sleek animations hain (Tailwind CSS).
+    * **HR/Admin:** Access to the full command center, employee management, and advanced resource filtering.
+    * **Employee:** Personalized dashboard showing individual work summaries, assigned projects, and current skill growth.
+* **🔑 Secure Authentication:** Implemented stateless security using **JSON Web Tokens (JWT)** for secure login and session management.
+* **🎨 Premium Dark UI:** A modern, high-performance dashboard featuring glowing glassmorphism cards, real-time statistics, and smooth Framer Motion-like animations.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### **Frontend**
-* **React.js (Vite)** - Fast development aur modern architecture.
-* **Tailwind CSS** - Custom styling aur premium dark theme.
-* **Lucide React** - Professional icons.
-* **React Router** - Single Page Application (SPA) navigation.
+* **React.js (Vite)** - For a lightning-fast UI and modular component architecture.
+* **Tailwind CSS** - Custom utility-first styling for a premium dark theme.
+* **Lucide React** - High-quality consistent iconography.
+* **React Router** - Managing Single Page Application (SPA) navigation.
 
 ### **Backend**
-* **Java (Spring Boot)** - Robust REST API development.
-* **Spring Security** - JWT based authentication aur authorization.
-* **Spring Data JPA** - Database interaction.
-* **MySQL** - Relational data storage.
+* **Java (Spring Boot)** - Robust and scalable REST API development.
+* **Spring Security** - Advanced JWT-based authentication and authorization.
+* **Spring Data JPA** - Efficient Object-Relational Mapping (ORM) for data persistence.
+* **MySQL** - Reliable relational data storage.
 
 ---
 
 ## 🏗️ Practical Implementation
 
-1.  **Authentication:** User login karta hai, Backend JWT generate karta hai jisme user ka `Role` encoded hota hai.
-2.  **Authorization:** React Sidebar sirf wahi options dikhata hai jo user ke role ke liye allowed hain.
-3.  **Skill Sync:** Jab "Auto-Sync" trigger hota hai, Backend GitHub se repos fetch karke languages analyze karta hai.
-4.  **Team Filtering:** Backend JPA queries ke through `ProficiencyLevel` aur `ProjectsCompleted` ke base par top employees ko rank karta hai.
+1.  **Authentication Flow:** User submits credentials via the React UI. The Backend validates them and issues a JWT containing the user's `Role` and `ID`.
+2.  **Dynamic Authorization:** The Frontend Sidebar dynamically filters menu items based on the decoded JWT role (HR vs. Employee).
+3.  **The Sync Engine:** When "Auto-Sync" is triggered, the Backend fetches repository metadata from GitHub, calculates project frequency, and updates the `UserSkill` records.
+4.  **Ranking Logic:** The Smart Filter uses custom JPA queries to rank engineers by balancing their `ProficiencyLevel` and `ProjectsCompleted`.
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### **Backend Setup**
-1. Update MySQL credentials in `application.properties`.
-2. Run `mvn clean install`.
-3. Start `ErisIntelligenceApplication.java`.
+### **Backend Configuration**
+1.  Update your MySQL credentials in `src/main/resources/application.properties`.
+2.  Run `mvn clean install` to download dependencies.
+3.  Execute `ErisIntelligenceApplication.java` to start the server.
 
-### **Frontend Setup**
-1. `cd frontend/react`
-2. `npm install`
-3. `npm run dev`
+### **Frontend Configuration**
+1.  Navigate to the frontend directory: `cd frontend`.
+2.  Install dependencies: `npm install`.
+3.  Start the development server: `npm run dev`.
 
 ---
 
